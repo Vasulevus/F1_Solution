@@ -3,6 +3,930 @@
   "compatibilityLevel": 1500,
   "model": {
     "culture": "uk-UA",
+    "dataSources": [
+      {
+        "type": "structured",
+        "name": "SQL/DESKTOP-7KUS9F1\\VAZULEVUS;Formula_1",
+        "connectionDetails": {
+          "protocol": "tds",
+          "address": {
+            "server": "DESKTOP-7KUS9F1\\VAZULEVUS",
+            "database": "Formula_1"
+          },
+          "authentication": null,
+          "query": null
+        },
+        "options": {},
+        "credential": {
+          "AuthenticationKind": "ServiceAccount",
+          "kind": "SQL",
+          "path": "desktop-7kus9f1\\vazulevus;Formula_1",
+          "EncryptConnection": false
+        }
+      }
+    ],
+    "tables": [
+      {
+        "name": "circuits",
+        "columns": [
+          {
+            "name": "circuitId",
+            "dataType": "int64",
+            "sourceColumn": "circuitId"
+          },
+          {
+            "name": "circuitRef",
+            "dataType": "string",
+            "sourceColumn": "circuitRef"
+          },
+          {
+            "name": "name",
+            "dataType": "string",
+            "sourceColumn": "name"
+          },
+          {
+            "name": "location",
+            "dataType": "string",
+            "sourceColumn": "location"
+          },
+          {
+            "name": "country",
+            "dataType": "string",
+            "sourceColumn": "country"
+          },
+          {
+            "name": "lat",
+            "dataType": "double",
+            "sourceColumn": "lat"
+          },
+          {
+            "name": "lng",
+            "dataType": "double",
+            "sourceColumn": "lng"
+          },
+          {
+            "name": "alt",
+            "dataType": "int64",
+            "sourceColumn": "alt"
+          },
+          {
+            "name": "url",
+            "dataType": "string",
+            "sourceColumn": "url"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/DESKTOP-7KUS9F1\\VAZULEVUS;Formula_1\",",
+                "    formula_1_circuits = Source{[Schema=\"formula_1\",Item=\"circuits\"]}[Data]",
+                "in",
+                "    formula_1_circuits"
+              ]
+            }
+          }
+        ],
+        "measures": [
+          {
+            "name": "_Fastest",
+            "expression": " MIN('laptimes'[time])"
+          }
+        ]
+      },
+      {
+        "name": "constructorresults",
+        "columns": [
+          {
+            "name": "constructorResultsId",
+            "dataType": "int64",
+            "sourceColumn": "constructorResultsId"
+          },
+          {
+            "name": "raceId",
+            "dataType": "int64",
+            "sourceColumn": "raceId"
+          },
+          {
+            "name": "constructorId",
+            "dataType": "int64",
+            "sourceColumn": "constructorId"
+          },
+          {
+            "name": "points",
+            "dataType": "double",
+            "sourceColumn": "points"
+          },
+          {
+            "name": "status",
+            "dataType": "string",
+            "sourceColumn": "status"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/DESKTOP-7KUS9F1\\VAZULEVUS;Formula_1\",",
+                "    formula_1_constructorresults = Source{[Schema=\"formula_1\",Item=\"constructorresults\"]}[Data]",
+                "in",
+                "    formula_1_constructorresults"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "constructors",
+        "columns": [
+          {
+            "name": "constructorId",
+            "dataType": "int64",
+            "sourceColumn": "constructorId"
+          },
+          {
+            "name": "constructorRef",
+            "dataType": "string",
+            "sourceColumn": "constructorRef"
+          },
+          {
+            "name": "name",
+            "dataType": "string",
+            "sourceColumn": "name"
+          },
+          {
+            "name": "nationality",
+            "dataType": "string",
+            "sourceColumn": "nationality"
+          },
+          {
+            "name": "url",
+            "dataType": "string",
+            "sourceColumn": "url"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/DESKTOP-7KUS9F1\\VAZULEVUS;Formula_1\",",
+                "    formula_1_constructors = Source{[Schema=\"formula_1\",Item=\"constructors\"]}[Data]",
+                "in",
+                "    formula_1_constructors"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "constructorstandings",
+        "columns": [
+          {
+            "name": "constructorStandingsId",
+            "dataType": "int64",
+            "sourceColumn": "constructorStandingsId"
+          },
+          {
+            "name": "raceId",
+            "dataType": "int64",
+            "sourceColumn": "raceId"
+          },
+          {
+            "name": "constructorId",
+            "dataType": "int64",
+            "sourceColumn": "constructorId"
+          },
+          {
+            "name": "points",
+            "dataType": "double",
+            "sourceColumn": "points"
+          },
+          {
+            "name": "position",
+            "dataType": "int64",
+            "sourceColumn": "position"
+          },
+          {
+            "name": "positionText",
+            "dataType": "string",
+            "sourceColumn": "positionText"
+          },
+          {
+            "name": "wins",
+            "dataType": "int64",
+            "sourceColumn": "wins"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/DESKTOP-7KUS9F1\\VAZULEVUS;Formula_1\",",
+                "    formula_1_constructorstandings = Source{[Schema=\"formula_1\",Item=\"constructorstandings\"]}[Data]",
+                "in",
+                "    formula_1_constructorstandings"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "drivers",
+        "columns": [
+          {
+            "name": "driverId",
+            "dataType": "int64",
+            "sourceColumn": "driverId"
+          },
+          {
+            "name": "driverRef",
+            "dataType": "string",
+            "sourceColumn": "driverRef"
+          },
+          {
+            "name": "number",
+            "dataType": "int64",
+            "sourceColumn": "number"
+          },
+          {
+            "name": "code",
+            "dataType": "string",
+            "sourceColumn": "code"
+          },
+          {
+            "name": "forename",
+            "dataType": "string",
+            "sourceColumn": "forename"
+          },
+          {
+            "name": "surname",
+            "dataType": "string",
+            "sourceColumn": "surname"
+          },
+          {
+            "name": "dob",
+            "dataType": "dateTime",
+            "sourceColumn": "dob"
+          },
+          {
+            "name": "nationality",
+            "dataType": "string",
+            "sourceColumn": "nationality"
+          },
+          {
+            "name": "url",
+            "dataType": "string",
+            "sourceColumn": "url"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/DESKTOP-7KUS9F1\\VAZULEVUS;Formula_1\",",
+                "    formula_1_drivers = Source{[Schema=\"formula_1\",Item=\"drivers\"]}[Data]",
+                "in",
+                "    formula_1_drivers"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "driverstandings",
+        "columns": [
+          {
+            "name": "driverStandingsId",
+            "dataType": "int64",
+            "sourceColumn": "driverStandingsId"
+          },
+          {
+            "name": "raceId",
+            "dataType": "int64",
+            "sourceColumn": "raceId"
+          },
+          {
+            "name": "driverId",
+            "dataType": "int64",
+            "sourceColumn": "driverId"
+          },
+          {
+            "name": "points",
+            "dataType": "double",
+            "sourceColumn": "points"
+          },
+          {
+            "name": "position",
+            "dataType": "int64",
+            "sourceColumn": "position"
+          },
+          {
+            "name": "positionText",
+            "dataType": "string",
+            "sourceColumn": "positionText"
+          },
+          {
+            "name": "wins",
+            "dataType": "int64",
+            "sourceColumn": "wins"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/DESKTOP-7KUS9F1\\VAZULEVUS;Formula_1\",",
+                "    formula_1_driverstandings = Source{[Schema=\"formula_1\",Item=\"driverstandings\"]}[Data]",
+                "in",
+                "    formula_1_driverstandings"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "laptimes",
+        "columns": [
+          {
+            "name": "raceId",
+            "dataType": "int64",
+            "sourceColumn": "raceId"
+          },
+          {
+            "name": "driverId",
+            "dataType": "int64",
+            "sourceColumn": "driverId"
+          },
+          {
+            "name": "lap",
+            "dataType": "int64",
+            "sourceColumn": "lap"
+          },
+          {
+            "name": "position",
+            "dataType": "int64",
+            "sourceColumn": "position"
+          },
+          {
+            "name": "time",
+            "dataType": "string",
+            "sourceColumn": "time"
+          },
+          {
+            "name": "milliseconds",
+            "dataType": "int64",
+            "sourceColumn": "milliseconds"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/DESKTOP-7KUS9F1\\VAZULEVUS;Formula_1\",",
+                "    formula_1_laptimes = Source{[Schema=\"formula_1\",Item=\"laptimes\"]}[Data]",
+                "in",
+                "    formula_1_laptimes"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "pitstops",
+        "columns": [
+          {
+            "name": "raceId",
+            "dataType": "int64",
+            "sourceColumn": "raceId"
+          },
+          {
+            "name": "driverId",
+            "dataType": "int64",
+            "sourceColumn": "driverId"
+          },
+          {
+            "name": "stop",
+            "dataType": "int64",
+            "sourceColumn": "stop"
+          },
+          {
+            "name": "lap",
+            "dataType": "int64",
+            "sourceColumn": "lap"
+          },
+          {
+            "name": "time",
+            "dataType": "dateTime",
+            "sourceColumn": "time"
+          },
+          {
+            "name": "duration",
+            "dataType": "string",
+            "sourceColumn": "duration"
+          },
+          {
+            "name": "milliseconds",
+            "dataType": "int64",
+            "sourceColumn": "milliseconds"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/DESKTOP-7KUS9F1\\VAZULEVUS;Formula_1\",",
+                "    formula_1_pitstops = Source{[Schema=\"formula_1\",Item=\"pitstops\"]}[Data]",
+                "in",
+                "    formula_1_pitstops"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "qualifying",
+        "columns": [
+          {
+            "name": "qualifyId",
+            "dataType": "int64",
+            "sourceColumn": "qualifyId"
+          },
+          {
+            "name": "raceId",
+            "dataType": "int64",
+            "sourceColumn": "raceId"
+          },
+          {
+            "name": "driverId",
+            "dataType": "int64",
+            "sourceColumn": "driverId"
+          },
+          {
+            "name": "constructorId",
+            "dataType": "int64",
+            "sourceColumn": "constructorId"
+          },
+          {
+            "name": "number",
+            "dataType": "int64",
+            "sourceColumn": "number"
+          },
+          {
+            "name": "position",
+            "dataType": "int64",
+            "sourceColumn": "position"
+          },
+          {
+            "name": "q1",
+            "dataType": "string",
+            "sourceColumn": "q1"
+          },
+          {
+            "name": "q2",
+            "dataType": "string",
+            "sourceColumn": "q2"
+          },
+          {
+            "name": "q3",
+            "dataType": "string",
+            "sourceColumn": "q3"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/DESKTOP-7KUS9F1\\VAZULEVUS;Formula_1\",",
+                "    formula_1_qualifying = Source{[Schema=\"formula_1\",Item=\"qualifying\"]}[Data]",
+                "in",
+                "    formula_1_qualifying"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "races",
+        "columns": [
+          {
+            "name": "raceId",
+            "dataType": "int64",
+            "sourceColumn": "raceId"
+          },
+          {
+            "name": "year",
+            "dataType": "int64",
+            "sourceColumn": "year"
+          },
+          {
+            "name": "round",
+            "dataType": "int64",
+            "sourceColumn": "round"
+          },
+          {
+            "name": "circuitId",
+            "dataType": "int64",
+            "sourceColumn": "circuitId"
+          },
+          {
+            "name": "name",
+            "dataType": "string",
+            "sourceColumn": "name"
+          },
+          {
+            "name": "date",
+            "dataType": "dateTime",
+            "sourceColumn": "date"
+          },
+          {
+            "name": "time",
+            "dataType": "dateTime",
+            "sourceColumn": "time"
+          },
+          {
+            "name": "url",
+            "dataType": "string",
+            "sourceColumn": "url"
+          },
+          {
+            "name": "fp1_date",
+            "dataType": "dateTime",
+            "sourceColumn": "fp1_date"
+          },
+          {
+            "name": "fp1_time",
+            "dataType": "dateTime",
+            "sourceColumn": "fp1_time"
+          },
+          {
+            "name": "fp2_date",
+            "dataType": "dateTime",
+            "sourceColumn": "fp2_date"
+          },
+          {
+            "name": "fp2_time",
+            "dataType": "dateTime",
+            "sourceColumn": "fp2_time"
+          },
+          {
+            "name": "fp3_date",
+            "dataType": "dateTime",
+            "sourceColumn": "fp3_date"
+          },
+          {
+            "name": "fp3_time",
+            "dataType": "dateTime",
+            "sourceColumn": "fp3_time"
+          },
+          {
+            "name": "quali_date",
+            "dataType": "dateTime",
+            "sourceColumn": "quali_date"
+          },
+          {
+            "name": "quali_time",
+            "dataType": "dateTime",
+            "sourceColumn": "quali_time"
+          },
+          {
+            "name": "sprint_date",
+            "dataType": "dateTime",
+            "sourceColumn": "sprint_date"
+          },
+          {
+            "name": "sprint_time",
+            "dataType": "dateTime",
+            "sourceColumn": "sprint_time"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/DESKTOP-7KUS9F1\\VAZULEVUS;Formula_1\",",
+                "    formula_1_races = Source{[Schema=\"formula_1\",Item=\"races\"]}[Data]",
+                "in",
+                "    formula_1_races"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "results",
+        "columns": [
+          {
+            "name": "resultId",
+            "dataType": "int64",
+            "sourceColumn": "resultId"
+          },
+          {
+            "name": "raceId",
+            "dataType": "int64",
+            "sourceColumn": "raceId"
+          },
+          {
+            "name": "driverId",
+            "dataType": "int64",
+            "sourceColumn": "driverId"
+          },
+          {
+            "name": "constructorId",
+            "dataType": "int64",
+            "sourceColumn": "constructorId"
+          },
+          {
+            "name": "number",
+            "dataType": "int64",
+            "sourceColumn": "number"
+          },
+          {
+            "name": "grid",
+            "dataType": "int64",
+            "sourceColumn": "grid"
+          },
+          {
+            "name": "position",
+            "dataType": "int64",
+            "sourceColumn": "position"
+          },
+          {
+            "name": "positionText",
+            "dataType": "string",
+            "sourceColumn": "positionText"
+          },
+          {
+            "name": "positionOrder",
+            "dataType": "int64",
+            "sourceColumn": "positionOrder"
+          },
+          {
+            "name": "points",
+            "dataType": "double",
+            "sourceColumn": "points"
+          },
+          {
+            "name": "laps",
+            "dataType": "int64",
+            "sourceColumn": "laps"
+          },
+          {
+            "name": "time",
+            "dataType": "string",
+            "sourceColumn": "time"
+          },
+          {
+            "name": "milliseconds",
+            "dataType": "int64",
+            "sourceColumn": "milliseconds"
+          },
+          {
+            "name": "fastestLap",
+            "dataType": "int64",
+            "sourceColumn": "fastestLap"
+          },
+          {
+            "name": "rank",
+            "dataType": "int64",
+            "sourceColumn": "rank"
+          },
+          {
+            "name": "fastestLapTime",
+            "dataType": "string",
+            "sourceColumn": "fastestLapTime"
+          },
+          {
+            "name": "fastestLapSpeed",
+            "dataType": "string",
+            "sourceColumn": "fastestLapSpeed"
+          },
+          {
+            "name": "statusId",
+            "dataType": "int64",
+            "sourceColumn": "statusId"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/DESKTOP-7KUS9F1\\VAZULEVUS;Formula_1\",",
+                "    formula_1_results = Source{[Schema=\"formula_1\",Item=\"results\"]}[Data]",
+                "in",
+                "    formula_1_results"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "seasons",
+        "columns": [
+          {
+            "name": "year",
+            "dataType": "int64",
+            "sourceColumn": "year"
+          },
+          {
+            "name": "url",
+            "dataType": "string",
+            "sourceColumn": "url"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/DESKTOP-7KUS9F1\\VAZULEVUS;Formula_1\",",
+                "    formula_1_seasons = Source{[Schema=\"formula_1\",Item=\"seasons\"]}[Data]",
+                "in",
+                "    formula_1_seasons"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "sprintresults",
+        "columns": [
+          {
+            "name": "sprintResultId",
+            "dataType": "int64",
+            "sourceColumn": "sprintResultId"
+          },
+          {
+            "name": "raceId",
+            "dataType": "int64",
+            "sourceColumn": "raceId"
+          },
+          {
+            "name": "driverId",
+            "dataType": "int64",
+            "sourceColumn": "driverId"
+          },
+          {
+            "name": "constructorId",
+            "dataType": "int64",
+            "sourceColumn": "constructorId"
+          },
+          {
+            "name": "number",
+            "dataType": "int64",
+            "sourceColumn": "number"
+          },
+          {
+            "name": "grid",
+            "dataType": "int64",
+            "sourceColumn": "grid"
+          },
+          {
+            "name": "position",
+            "dataType": "int64",
+            "sourceColumn": "position"
+          },
+          {
+            "name": "positionText",
+            "dataType": "string",
+            "sourceColumn": "positionText"
+          },
+          {
+            "name": "positionOrder",
+            "dataType": "int64",
+            "sourceColumn": "positionOrder"
+          },
+          {
+            "name": "points",
+            "dataType": "double",
+            "sourceColumn": "points"
+          },
+          {
+            "name": "laps",
+            "dataType": "int64",
+            "sourceColumn": "laps"
+          },
+          {
+            "name": "time",
+            "dataType": "string",
+            "sourceColumn": "time"
+          },
+          {
+            "name": "milliseconds",
+            "dataType": "int64",
+            "sourceColumn": "milliseconds"
+          },
+          {
+            "name": "fastestLap",
+            "dataType": "int64",
+            "sourceColumn": "fastestLap"
+          },
+          {
+            "name": "fastestLapTime",
+            "dataType": "string",
+            "sourceColumn": "fastestLapTime"
+          },
+          {
+            "name": "statusId",
+            "dataType": "int64",
+            "sourceColumn": "statusId"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/DESKTOP-7KUS9F1\\VAZULEVUS;Formula_1\",",
+                "    formula_1_sprintresults = Source{[Schema=\"formula_1\",Item=\"sprintresults\"]}[Data]",
+                "in",
+                "    formula_1_sprintresults"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "status",
+        "columns": [
+          {
+            "name": "statusId",
+            "dataType": "int64",
+            "sourceColumn": "statusId"
+          },
+          {
+            "name": "status",
+            "dataType": "string",
+            "sourceColumn": "status"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/DESKTOP-7KUS9F1\\VAZULEVUS;Formula_1\",",
+                "    formula_1_status = Source{[Schema=\"formula_1\",Item=\"status\"]}[Data]",
+                "in",
+                "    formula_1_status"
+              ]
+            }
+          }
+        ]
+      }
+    ],
     "annotations": [
       {
         "name": "ClientCompatibilityLevel",
