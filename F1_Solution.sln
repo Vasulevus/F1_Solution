@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32510.428
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{6870E480-7721-4708-BFB8-9AE898AA21B3}") = "Analysis Services F1", "Tabular Project F1\Analysis Services F1.smproj", "{8CE414BB-95B2-4C99-9E03-51BA72086E22}"
+EndProject
+Project("{C9674DCB-5085-4A16-B785-4C70DD1589BD}") = "Integration Services F1", "Integration Services F!\Integration Services F1.dtproj", "{01B10BB1-722F-4FFF-9740-701A067EC90D}"
+EndProject
+Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "Report Services F1", "Report Services F1\Report Services F1.rptproj", "{C6F143F9-F181-41EB-89E4-CAE3F1F9955C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		DebugLocal|x86 = DebugLocal|x86
+		Development|x86 = Development|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8CE414BB-95B2-4C99-9E03-51BA72086E22}.Debug|x86.ActiveCfg = Development|x86
+		{8CE414BB-95B2-4C99-9E03-51BA72086E22}.Debug|x86.Build.0 = Development|x86
+		{8CE414BB-95B2-4C99-9E03-51BA72086E22}.Debug|x86.Deploy.0 = Development|x86
+		{8CE414BB-95B2-4C99-9E03-51BA72086E22}.DebugLocal|x86.ActiveCfg = Development|x86
+		{8CE414BB-95B2-4C99-9E03-51BA72086E22}.DebugLocal|x86.Build.0 = Development|x86
+		{8CE414BB-95B2-4C99-9E03-51BA72086E22}.DebugLocal|x86.Deploy.0 = Development|x86
+		{8CE414BB-95B2-4C99-9E03-51BA72086E22}.Development|x86.ActiveCfg = Development|x86
+		{8CE414BB-95B2-4C99-9E03-51BA72086E22}.Development|x86.Build.0 = Development|x86
+		{8CE414BB-95B2-4C99-9E03-51BA72086E22}.Development|x86.Deploy.0 = Development|x86
+		{8CE414BB-95B2-4C99-9E03-51BA72086E22}.Release|x86.ActiveCfg = Development|x86
+		{8CE414BB-95B2-4C99-9E03-51BA72086E22}.Release|x86.Build.0 = Development|x86
+		{8CE414BB-95B2-4C99-9E03-51BA72086E22}.Release|x86.Deploy.0 = Development|x86
+		{01B10BB1-722F-4FFF-9740-701A067EC90D}.Debug|x86.ActiveCfg = Development
+		{01B10BB1-722F-4FFF-9740-701A067EC90D}.Debug|x86.Build.0 = Development
+		{01B10BB1-722F-4FFF-9740-701A067EC90D}.DebugLocal|x86.ActiveCfg = Development
+		{01B10BB1-722F-4FFF-9740-701A067EC90D}.DebugLocal|x86.Build.0 = Development
+		{01B10BB1-722F-4FFF-9740-701A067EC90D}.Development|x86.ActiveCfg = Development
+		{01B10BB1-722F-4FFF-9740-701A067EC90D}.Development|x86.Build.0 = Development
+		{01B10BB1-722F-4FFF-9740-701A067EC90D}.Release|x86.ActiveCfg = Development
+		{01B10BB1-722F-4FFF-9740-701A067EC90D}.Release|x86.Build.0 = Development
+		{C6F143F9-F181-41EB-89E4-CAE3F1F9955C}.Debug|x86.ActiveCfg = Debug
+		{C6F143F9-F181-41EB-89E4-CAE3F1F9955C}.Debug|x86.Build.0 = Debug
+		{C6F143F9-F181-41EB-89E4-CAE3F1F9955C}.Debug|x86.Deploy.0 = Debug
+		{C6F143F9-F181-41EB-89E4-CAE3F1F9955C}.DebugLocal|x86.ActiveCfg = DebugLocal
+		{C6F143F9-F181-41EB-89E4-CAE3F1F9955C}.DebugLocal|x86.Build.0 = DebugLocal
+		{C6F143F9-F181-41EB-89E4-CAE3F1F9955C}.Development|x86.ActiveCfg = Debug
+		{C6F143F9-F181-41EB-89E4-CAE3F1F9955C}.Development|x86.Build.0 = Debug
+		{C6F143F9-F181-41EB-89E4-CAE3F1F9955C}.Development|x86.Deploy.0 = Debug
+		{C6F143F9-F181-41EB-89E4-CAE3F1F9955C}.Release|x86.ActiveCfg = Release
+		{C6F143F9-F181-41EB-89E4-CAE3F1F9955C}.Release|x86.Build.0 = Release
+		{C6F143F9-F181-41EB-89E4-CAE3F1F9955C}.Release|x86.Deploy.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A42B985E-7A04-4E9C-AAA1-B9EC37ABC2D0}
+	EndGlobalSection
+EndGlobal
