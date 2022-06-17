@@ -16,7 +16,6 @@
           "authentication": null,
           "query": null
         },
-        "options": {},
         "credential": {
           "AuthenticationKind": "ServiceAccount",
           "kind": "SQL",
@@ -925,6 +924,231 @@
             }
           }
         ]
+      },
+      {
+        "name": "date",
+        "dataCategory": "Time",
+        "columns": [
+          {
+            "name": "date",
+            "dataType": "dateTime",
+            "isKey": true,
+            "sourceColumn": "date"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Джерело = #date(1950,1,1),",
+                "    Зараз = DateTime.LocalNow(),",
+                "    Сьогодні = DateTime.Date( #\"Зараз\"),",
+                "    #\"Кінець цього року\" = Date.EndOfYear( Сьогодні),",
+                "    #\"Всього днів\" = Duration.Days( #\"Кінець цього року\" - #\"Джерело\") + 1,",
+                "    #\"Список днів\" = List.Dates(#\"Джерело\", #\"Всього днів\", #duration(1,0,0,0)),",
+                "    #\"Перетворено на таблицю\" = Table.FromList(#\"Список днів\", Splitter.SplitByNothing(), null, null, ExtraValues.Error),",
+                "    #\"Змінений тип\" = Table.TransformColumnTypes(#\"Перетворено на таблицю\",{{\"Column1\", type date}}),",
+                "    #\"Перейменовані стовпці\" = Table.RenameColumns(#\"Змінений тип\",{{\"Column1\", \"date\"}})",
+                "in",
+                "    #\"Перейменовані стовпці\""
+              ]
+            },
+            "annotations": [
+              {
+                "name": "QueryEditorSerialization",
+                "value": [
+                  "<?xml version=\"1.0\" encoding=\"UTF-16\"?><Gemini xmlns=\"QueryEditorSerialization\"><AnnotationContent><![CDATA[<RSQueryCommandText>let",
+                  "    Джерело = #date(1950,1,1),",
+                  "    Зараз = DateTime.LocalNow(),",
+                  "    Сьогодні = DateTime.Date( #\"Зараз\"),",
+                  "    #\"Кінець цього року\" = Date.EndOfYear( Сьогодні),",
+                  "    #\"Всього днів\" = Duration.Days( #\"Кінець цього року\" - #\"Джерело\") + 1,",
+                  "    #\"Список днів\" = List.Dates(#\"Джерело\", #\"Всього днів\", #duration(1,0,0,0)),",
+                  "    #\"Перетворено на таблицю\" = Table.FromList(#\"Список днів\", Splitter.SplitByNothing(), null, null, ExtraValues.Error),",
+                  "    #\"Змінений тип\" = Table.TransformColumnTypes(#\"Перетворено на таблицю\",{{\"Column1\", type date}}),",
+                  "    #\"Перейменовані стовпці\" = Table.RenameColumns(#\"Змінений тип\",{{\"Column1\", \"date\"}})",
+                  "in",
+                  "    #\"Перейменовані стовпці\"</RSQueryCommandText><RSQueryCommandType>Text</RSQueryCommandType><RSQueryDesignState></RSQueryDesignState>]]></AnnotationContent></Gemini>"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "934c8939-f5f9-42a4-a32c-3a13e3ffda7d",
+        "fromTable": "constructorresults",
+        "fromColumn": "constructorId",
+        "toTable": "constructors",
+        "toColumn": "constructorId"
+      },
+      {
+        "name": "2c7420c4-a87a-46f0-b322-eabce5369e82",
+        "fromTable": "constructorstandings",
+        "fromColumn": "constructorId",
+        "toTable": "constructors",
+        "toColumn": "constructorId"
+      },
+      {
+        "name": "433ef39f-395f-4061-b1cc-a6d3af49a100",
+        "fromTable": "races",
+        "fromColumn": "circuitId",
+        "toTable": "circuits",
+        "toColumn": "circuitId"
+      },
+      {
+        "name": "706c54dc-9bbf-4ca1-92e7-108e024d7716",
+        "fromTable": "races",
+        "fromColumn": "year",
+        "toTable": "seasons",
+        "toColumn": "year"
+      },
+      {
+        "name": "231244f5-073f-496b-8105-307af02d9a37",
+        "fromTable": "laptimes",
+        "fromColumn": "raceId",
+        "toTable": "races",
+        "toColumn": "raceId"
+      },
+      {
+        "name": "c61598cb-65e3-4ec2-945b-2078aee50f72",
+        "fromTable": "constructorstandings",
+        "fromColumn": "raceId",
+        "toTable": "races",
+        "toColumn": "raceId"
+      },
+      {
+        "name": "41d84820-aaae-453d-a51b-ff79808e4521",
+        "fromTable": "constructorresults",
+        "fromColumn": "raceId",
+        "toTable": "races",
+        "toColumn": "raceId"
+      },
+      {
+        "name": "45c269c2-a6fa-4818-89a3-e5f591c8d9bb",
+        "fromTable": "qualifying",
+        "fromColumn": "raceId",
+        "toTable": "races",
+        "toColumn": "raceId"
+      },
+      {
+        "name": "e66e9fe5-1115-455e-9851-6f672f6fb293",
+        "fromTable": "pitstops",
+        "fromColumn": "raceId",
+        "toTable": "races",
+        "toColumn": "raceId"
+      },
+      {
+        "name": "5bed2772-9bc8-4c5b-9c88-9554520bc912",
+        "fromTable": "results",
+        "fromColumn": "raceId",
+        "toTable": "races",
+        "toColumn": "raceId"
+      },
+      {
+        "name": "00b93d03-c7ff-4ffb-9af5-bfb707942e94",
+        "fromTable": "sprintresults",
+        "fromColumn": "raceId",
+        "toTable": "races",
+        "toColumn": "raceId"
+      },
+      {
+        "name": "3cec9029-f517-46e6-a95e-c4e1df8ca122",
+        "fromTable": "driverstandings",
+        "fromColumn": "raceId",
+        "toTable": "races",
+        "toColumn": "raceId"
+      },
+      {
+        "name": "2890691f-d202-43df-8236-d35242b902a2",
+        "fromTable": "qualifying",
+        "fromColumn": "constructorId",
+        "toTable": "constructors",
+        "toColumn": "constructorId"
+      },
+      {
+        "name": "a48d0de2-855b-4e4a-a7a7-392f5c10ccee",
+        "fromTable": "sprintresults",
+        "fromColumn": "constructorId",
+        "toTable": "constructors",
+        "toColumn": "constructorId"
+      },
+      {
+        "name": "86dce1db-5801-47b9-ad17-25ab56b3116b",
+        "fromTable": "results",
+        "fromColumn": "constructorId",
+        "toTable": "constructors",
+        "toColumn": "constructorId"
+      },
+      {
+        "name": "567deb8c-c4d8-4bcb-9c19-eeead993b745",
+        "fromTable": "laptimes",
+        "fromColumn": "driverId",
+        "toTable": "drivers",
+        "toColumn": "driverId"
+      },
+      {
+        "name": "03a9fa7b-46e2-414a-b048-0f52ea09e592",
+        "fromTable": "qualifying",
+        "fromColumn": "driverId",
+        "toTable": "drivers",
+        "toColumn": "driverId"
+      },
+      {
+        "name": "aada892b-136a-48c9-958b-18f04cd39eb7",
+        "fromTable": "pitstops",
+        "fromColumn": "driverId",
+        "toTable": "drivers",
+        "toColumn": "driverId"
+      },
+      {
+        "name": "8c3c84f5-5d48-4e67-954e-6ae68c072dfc",
+        "fromTable": "results",
+        "fromColumn": "driverId",
+        "toTable": "drivers",
+        "toColumn": "driverId"
+      },
+      {
+        "name": "e7906a4d-6449-4f14-8d2e-0544ebc22888",
+        "fromTable": "sprintresults",
+        "fromColumn": "driverId",
+        "toTable": "drivers",
+        "toColumn": "driverId"
+      },
+      {
+        "name": "37d1d511-cb56-4c84-a99a-8ad3607dc555",
+        "fromTable": "driverstandings",
+        "fromColumn": "driverId",
+        "toTable": "drivers",
+        "toColumn": "driverId"
+      },
+      {
+        "name": "ea65d535-b0e5-4d74-973d-9b7b5a310434",
+        "fromTable": "sprintresults",
+        "fromColumn": "statusId",
+        "toTable": "status",
+        "toColumn": "statusId"
+      },
+      {
+        "name": "8d2ad60f-09f6-48a5-860e-4a00df28c3ee",
+        "fromTable": "results",
+        "fromColumn": "statusId",
+        "toTable": "status",
+        "toColumn": "statusId"
+      },
+      {
+        "name": "285f0597-f9fd-4bcb-99e1-91474ee41e4d",
+        "fromCardinality": "one",
+        "fromTable": "date",
+        "fromColumn": "date",
+        "toTable": "races",
+        "toColumn": "date",
+        "crossFilteringBehavior": "bothDirections"
       }
     ],
     "annotations": [
