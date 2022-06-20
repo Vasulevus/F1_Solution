@@ -5,14 +5,14 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="DESKTOP-7KUS9F1"
   DTS:CreatorName="DESKTOP-7KUS9F1\Olexander"
-  DTS:DTSID="{0935E520-699A-4C0D-9AAC-7D7DB1703D84}"
+  DTS:DTSID="{0F5CF030-1FF0-45FE-A846-0EDD9984FCA0}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="16.0.521.0"
   DTS:LocaleID="1058"
-  DTS:ObjectName="Package"
+  DTS:ObjectName="Formula 1 database checking"
   DTS:PackageType="5"
-  DTS:VersionBuild="4"
-  DTS:VersionGUID="{76088113-325E-469A-B2CD-3732B5ED2D76}">
+  DTS:VersionBuild="6"
+  DTS:VersionGUID="{AAC1765A-04A8-4A4D-84F5-4C6347C73DA7}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>

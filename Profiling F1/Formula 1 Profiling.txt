@@ -11580,19 +11580,19 @@
         <TopRegexPatterns>
           <PatternDistributionItem>
             <RegexText>R</RegexText>
-            <Frequency>33</Frequency>
+            <Frequency>34</Frequency>
           </PatternDistributionItem>
           <PatternDistributionItem>
             <RegexText>\d</RegexText>
-            <Frequency>37</Frequency>
+            <Frequency>38</Frequency>
           </PatternDistributionItem>
           <PatternDistributionItem>
             <RegexText>\d\d</RegexText>
-            <Frequency>21</Frequency>
+            <Frequency>20</Frequency>
           </PatternDistributionItem>
           <PatternDistributionItem>
             <RegexText>F</RegexText>
-            <Frequency>6</Frequency>
+            <Frequency>5</Frequency>
           </PatternDistributionItem>
         </TopRegexPatterns>
       </ColumnPatternProfile>
@@ -11603,11 +11603,11 @@
         <TopRegexPatterns>
           <PatternDistributionItem>
             <RegexText>\+\d\d\.\d\d\d</RegexText>
-            <Frequency>37</Frequency>
+            <Frequency>38</Frequency>
           </PatternDistributionItem>
           <PatternDistributionItem>
             <RegexText>\+1:\d\d\.\d\d\d</RegexText>
-            <Frequency>19</Frequency>
+            <Frequency>20</Frequency>
           </PatternDistributionItem>
           <PatternDistributionItem>
             <RegexText>\+\d\.\d\d\d</RegexText>
@@ -26786,11 +26786,11 @@
         <TopRegexPatterns>
           <PatternDistributionItem>
             <RegexText>\d</RegexText>
-            <Frequency>70</Frequency>
+            <Frequency>69</Frequency>
           </PatternDistributionItem>
           <PatternDistributionItem>
             <RegexText>\d\d</RegexText>
-            <Frequency>30</Frequency>
+            <Frequency>31</Frequency>
           </PatternDistributionItem>
         </TopRegexPatterns>
       </ColumnPatternProfile>
@@ -29593,12 +29593,12 @@
         <NumberOfDistinctValues>24</NumberOfDistinctValues>
         <ValueDistribution>
           <ValueDistributionItem>
-            <Value>19</Value>
-            <Count>13614</Count>
+            <Value>18</Value>
+            <Count>17467</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
-            <Value>13</Value>
-            <Count>26908</Count>
+            <Value>19</Value>
+            <Count>13614</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>15</Value>
@@ -29607,6 +29607,50 @@
           <ValueDistributionItem>
             <Value>24</Value>
             <Count>563</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1</Value>
+            <Count>29298</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>11</Value>
+            <Count>28215</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>4</Value>
+            <Count>29275</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3</Value>
+            <Count>29291</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>23</Value>
+            <Count>1116</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>5</Value>
+            <Count>29244</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>9</Value>
+            <Count>28823</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>16</Value>
+            <Count>23028</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>6</Value>
+            <Count>29197</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>21</Value>
+            <Count>4655</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>13</Value>
+            <Count>26908</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>12</Value>
@@ -29629,64 +29673,20 @@
             <Count>20815</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
-            <Value>6</Value>
-            <Count>29197</Count>
-          </ValueDistributionItem>
-          <ValueDistributionItem>
-            <Value>21</Value>
-            <Count>4655</Count>
-          </ValueDistributionItem>
-          <ValueDistributionItem>
             <Value>14</Value>
             <Count>25972</Count>
-          </ValueDistributionItem>
-          <ValueDistributionItem>
-            <Value>10</Value>
-            <Count>28588</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>7</Value>
             <Count>29041</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
+            <Value>10</Value>
+            <Count>28588</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
             <Value>20</Value>
             <Count>9013</Count>
-          </ValueDistributionItem>
-          <ValueDistributionItem>
-            <Value>11</Value>
-            <Count>28215</Count>
-          </ValueDistributionItem>
-          <ValueDistributionItem>
-            <Value>1</Value>
-            <Count>29298</Count>
-          </ValueDistributionItem>
-          <ValueDistributionItem>
-            <Value>3</Value>
-            <Count>29291</Count>
-          </ValueDistributionItem>
-          <ValueDistributionItem>
-            <Value>4</Value>
-            <Count>29275</Count>
-          </ValueDistributionItem>
-          <ValueDistributionItem>
-            <Value>23</Value>
-            <Count>1116</Count>
-          </ValueDistributionItem>
-          <ValueDistributionItem>
-            <Value>5</Value>
-            <Count>29244</Count>
-          </ValueDistributionItem>
-          <ValueDistributionItem>
-            <Value>9</Value>
-            <Count>28823</Count>
-          </ValueDistributionItem>
-          <ValueDistributionItem>
-            <Value>16</Value>
-            <Count>23028</Count>
-          </ValueDistributionItem>
-          <ValueDistributionItem>
-            <Value>18</Value>
-            <Count>17467</Count>
           </ValueDistributionItem>
         </ValueDistribution>
       </ColumnValueDistributionProfile>
@@ -29709,11 +29709,11 @@
         <TopRegexPatterns>
           <PatternDistributionItem>
             <RegexText>1:\d\d\.\d\d\d</RegexText>
-            <Frequency>94</Frequency>
+            <Frequency>95</Frequency>
           </PatternDistributionItem>
           <PatternDistributionItem>
-            <RegexText>2:\d\d\.\d\d\d</RegexText>
-            <Frequency>6</Frequency>
+            <RegexText>\d:\d\d\.\d\d\d</RegexText>
+            <Frequency>5</Frequency>
           </PatternDistributionItem>
         </TopRegexPatterns>
       </ColumnPatternProfile>
@@ -32953,11 +32953,11 @@
         <TopRegexPatterns>
           <PatternDistributionItem>
             <RegexText>\d\d</RegexText>
-            <Frequency>72</Frequency>
+            <Frequency>71</Frequency>
           </PatternDistributionItem>
           <PatternDistributionItem>
             <RegexText>\d</RegexText>
-            <Frequency>28</Frequency>
+            <Frequency>29</Frequency>
           </PatternDistributionItem>
         </TopRegexPatterns>
       </ColumnPatternProfile>
